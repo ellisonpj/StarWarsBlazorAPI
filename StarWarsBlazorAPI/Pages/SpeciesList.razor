@@ -1,0 +1,57 @@
+﻿@inject IHttpClientFactory _clientFactory
+
+<div class="col-md-2">
+    <table class="table table-hover table-striped table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Species.Count; i++)
+            {
+                <tr>
+                    <td><a href="@($"/speciesdetails/{Species[i].Url.Substring(29)}")">@Species[i].Name</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    [Parameter]
+    public string Heading { get; set; }
+
+    [Parameter]
+    public string[] species { get; set; }
+
+    [Parameter]
+    public string ErrorString { get; set; }
+
+
+    List<Species> Species = new List<Species>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = _clientFactory.CreateClient("swapi");
+
+        foreach (var specie in species)
+        {
+            string urlPpath = $"species/{specie.Substring(29)}";
+
+            try
+            {
+                var s = await client.GetFromJsonAsync<Species>(urlPpath);
+
+                Species.Add(s);
+
+            }
+            catch (Exception ex)
+            {
+                ErrorString = $"There was an error getting specie details: { ex.Message } { urlPpath }";
+            }
+        }
+    }
+
+}
