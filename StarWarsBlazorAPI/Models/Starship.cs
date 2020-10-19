@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 namespace StarWarsBlazorAPI.Models
 {
 
-
-    public class Vehicles
+    public class Starship
     {
         public string Name { get; set; }
         public string Model { get; set; }
@@ -19,11 +18,14 @@ namespace StarWarsBlazorAPI.Models
         public string Passengers { get; set; }
         public string Cargo_capacity { get; set; }
         public string Consumables { get; set; }
-        public string Vehicle_class { get; set; }
+        public string Hyperdrive_rating { get; set; }
+        public string MGLT { get; set; }
+        public string Starship_class { get; set; }
         public string[] Pilots { get; set; }
         public string[] Films { get; set; }
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }
     }
+
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace StarWarsBlazorAPI.Models
 {
 
-    public class Species
+    public class Specie
     {
         public string Name { get; set; }
         public string Classification { get; set; }

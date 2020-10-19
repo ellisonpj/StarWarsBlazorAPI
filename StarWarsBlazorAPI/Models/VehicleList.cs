@@ -11,6 +11,6 @@ namespace StarWarsBlazorAPI.Models
         public int Count { get; set; }
         public string Next { get; set; }
         public string Previous { get; set; }
-        public Vehicles[] Results { get; set; }
+        public Vehicle[] Results { get; set; }
     }
 }

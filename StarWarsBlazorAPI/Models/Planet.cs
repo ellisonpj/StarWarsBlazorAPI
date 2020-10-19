@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace StarWarsBlazorAPI.Models
 {
 
-    public class Planets
+    public class Planet
     {
         public string Name { get; set; }
         public string Rotation_period { get; set; }
