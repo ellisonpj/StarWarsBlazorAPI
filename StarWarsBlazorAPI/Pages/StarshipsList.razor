@@ -29,7 +29,7 @@
     [Parameter]
     public string ErrorString { get; set; }
 
-    List<Starships> Starships = new List<Starships>();
+    List<Starship> Starships = new List<Starship>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -41,7 +41,7 @@
 
             try
             {
-                var s = await client.GetFromJsonAsync<Starships>(urlPpath);
+                var s = await client.GetFromJsonAsync<Starship>(urlPpath);
 
                 Starships.Add(s);
 

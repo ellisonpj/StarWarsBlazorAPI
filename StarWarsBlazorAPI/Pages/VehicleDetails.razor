@@ -75,7 +75,7 @@ else
     [Parameter]
     public string id { get; set; }
 
-    Vehicles Vehicle;
+    Vehicle Vehicle;
     string errorString;
 
     protected override async Task OnInitializedAsync()
@@ -86,7 +86,7 @@ else
 
         try
         {
-            Vehicle = await client.GetFromJsonAsync<Vehicles>(urlPpath);
+            Vehicle = await client.GetFromJsonAsync<Vehicle>(urlPpath);
             errorString = null;
 
         }

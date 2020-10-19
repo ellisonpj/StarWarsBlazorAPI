@@ -70,7 +70,7 @@ else
     [Parameter]
     public string id { get; set; }
 
-    Planets planet;
+    Planet planet;
     string errorString;
     string population;
 
@@ -82,7 +82,7 @@ else
 
         try
         {
-            planet = await client.GetFromJsonAsync<Planets>(urlPpath);
+            planet = await client.GetFromJsonAsync<Planet>(urlPpath);
             errorString = null;
 
             Int64 popNum;

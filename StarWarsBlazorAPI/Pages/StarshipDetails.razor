@@ -83,7 +83,7 @@ else
     [Parameter]
     public string id { get; set; }
 
-    Starships Starship;
+    Starship Starship;
     string errorString;
 
     protected override async Task OnInitializedAsync()
@@ -94,7 +94,7 @@ else
 
         try
         {
-            Starship = await client.GetFromJsonAsync<Starships>(urlPpath);
+            Starship = await client.GetFromJsonAsync<Starship>(urlPpath);
             errorString = null;
 
         }

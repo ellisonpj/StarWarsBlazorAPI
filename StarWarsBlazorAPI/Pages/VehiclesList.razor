@@ -30,7 +30,7 @@
     public string ErrorString { get; set; }
 
 
-    List<Vehicles> Vehicles = new List<Vehicles>();
+    List<Vehicle> Vehicles = new List<Vehicle>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -42,7 +42,7 @@
 
             try
             {
-                var v = await client.GetFromJsonAsync<Vehicles>(urlPpath);
+                var v = await client.GetFromJsonAsync<Vehicle>(urlPpath);
 
                 Vehicles.Add(v);
 

@@ -79,7 +79,7 @@ else
     public string id { get; set; }
 
     People character;
-    Planets planet;
+    Planet planet;
     string errorString;
 
 
@@ -114,7 +114,7 @@ else
 
         try
         {
-            planet = await client.GetFromJsonAsync<Planets>(urlPpath);
+            planet = await client.GetFromJsonAsync<Planet>(urlPpath);
 
         }
         catch (Exception ex)
