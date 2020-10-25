@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (Vehicles.Count == 0)
+            @if (vehicleListLoaded == false)
             {
             <tr>
                 <td>
@@ -42,8 +42,9 @@
     [Parameter]
     public string ErrorString { get; set; }
 
-
     List<Vehicle> Vehicles = new List<Vehicle>();
+
+    private bool vehicleListLoaded = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -65,5 +66,7 @@
                 ErrorString = $"There was an error getting vehicle details: { ex.Message } { urlPpath }";
             }
         }
+
+        vehicleListLoaded = true;
     }
 }

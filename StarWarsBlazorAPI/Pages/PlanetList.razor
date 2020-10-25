@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (Planets.Count == 0)
+            @if (planetListLoaded == false)
             {
             <tr>
                 <td>
@@ -42,8 +42,9 @@
     [Parameter]
     public string ErrorString { get; set; }
 
-
     List<Planet> Planets = new List<Planet>();
+
+    private bool planetListLoaded = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -65,5 +66,7 @@
                 ErrorString = $"There was an error getting planet details: { ex.Message } { urlPpath }";
             }
         }
+
+        planetListLoaded = true;
     }
 }

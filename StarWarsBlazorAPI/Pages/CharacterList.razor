@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (people.Count == 0)
+            @if (characterListLoaded == false)
             {
                 <tr>
                     <td>
@@ -45,6 +45,8 @@
 
     List<People> people = new List<People>();
 
+    private bool characterListLoaded = false;
+
     protected override async Task OnInitializedAsync()
     {
         var client = _clientFactory.CreateClient("swapi");
@@ -65,5 +67,7 @@
                 ErrorString = $"There was an error getting people details: { ex.Message } { urlPpath }";
             }
         }
+
+        characterListLoaded = true;
     }
 }

@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (Species.Count == 0)
+            @if (specieListLoaded == false)
             {
             <tr>
                 <td>
@@ -45,6 +45,8 @@
 
     List<Specie> Species = new List<Specie>();
 
+    private bool specieListLoaded = false;
+
     protected override async Task OnInitializedAsync()
     {
         var client = _clientFactory.CreateClient("swapi");
@@ -65,6 +67,7 @@
                 ErrorString = $"There was an error getting specie details: { ex.Message } { urlPpath }";
             }
         }
-    }
 
+        specieListLoaded = true;
+    }
 }

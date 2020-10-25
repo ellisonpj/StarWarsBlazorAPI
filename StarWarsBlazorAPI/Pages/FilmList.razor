@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (movies.Count == 0)
+            @if (filmListLoaded == false)
             {
             <tr>
                 <td>
@@ -44,9 +44,12 @@
 
     List<Films> movies = new List<Films>();
 
+    private bool filmListLoaded = false;
+
     protected override async Task OnInitializedAsync()
     {
         var client = _clientFactory.CreateClient("swapi");
+
 
         foreach (var film in films)
         {
@@ -64,5 +67,7 @@
                 ErrorString = $"There was an error getting film details: { ex.Message } { urlPpath }";
             }
         }
+
+        filmListLoaded = true;
     }
 }

@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (Starships.Count == 0)
+            @if (starshipListLoaded == false)
             {
             <tr>
                 <td>
@@ -44,6 +44,8 @@
 
     List<Starship> Starships = new List<Starship>();
 
+    private bool starshipListLoaded = false;
+
     protected override async Task OnInitializedAsync()
     {
         var client = _clientFactory.CreateClient("swapi");
@@ -64,5 +66,7 @@
                 ErrorString = $"There was an error getting ship details: { ex.Message } { urlPpath }";
             }
         }
+
+        starshipListLoaded = true;
     }
 }
