@@ -17,8 +17,8 @@ namespace StarWarsBlazorAPI.Models
         public string Terrain { get; set; }
         public string Surface_water { get; set; }
         public string Population { get; set; }
-        public string[] Residents { get; set; }
-        public string[] Films { get; set; }
+        public List<string> Residents { get; set; }
+        public List<string> Films { get; set; }
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }

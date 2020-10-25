@@ -18,8 +18,8 @@ namespace StarWarsBlazorAPI.Models
         public string Average_lifespan { get; set; }
         public string Homeworld { get; set; }
         public string Language { get; set; }
-        public string[] People { get; set; }
-        public string[] Films { get; set; }
+        public List<string> People { get; set; }
+        public List<string> Films { get; set; }
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }

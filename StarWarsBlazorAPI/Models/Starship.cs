@@ -21,8 +21,8 @@ namespace StarWarsBlazorAPI.Models
         public string Hyperdrive_rating { get; set; }
         public string MGLT { get; set; }
         public string Starship_class { get; set; }
-        public string[] Pilots { get; set; }
-        public string[] Films { get; set; }
+        public List<string> Pilots { get; set; }
+        public List<string> Films { get; set; }
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }

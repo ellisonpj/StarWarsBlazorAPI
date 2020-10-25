@@ -20,8 +20,8 @@ namespace StarWarsBlazorAPI.Models
         public string Cargo_capacity { get; set; }
         public string Consumables { get; set; }
         public string Vehicle_class { get; set; }
-        public string[] Pilots { get; set; }
-        public string[] Films { get; set; }
+        public List<string> Pilots { get; set; }
+        public List<string> Films { get; set; }
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }

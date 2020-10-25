@@ -17,10 +17,10 @@ namespace StarWarsBlazorAPI.Models
         public string Birth_year { get; set; }
         public string Gender { get; set; }
         public string Homeworld { get; set; }
-        public string[] Films { get; set; }
-        public string[] Species { get; set; }
-        public string[] Vehicles { get; set; }
-        public string[] Starships { get; set; }
+        public List<string> Films { get; set; }
+        public List<string> Species { get; set; }
+        public List<string> Vehicles { get; set; }
+        public List<string> Starships { get; set; }
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }
