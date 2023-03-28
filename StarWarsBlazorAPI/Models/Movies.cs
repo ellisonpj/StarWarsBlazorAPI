@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿namespace StarWarsBlazorAPI.Models;
 
-namespace StarWarsBlazorAPI.Models
+public class Movies
 {
-
-    public class Movies
-    {
-        public int Count { get; set; }
-        public string Next { get; set; }
-        public string Previous { get; set; }
-        public Films[] Results { get; set; }
-    }
+    public int Count { get; set; }
+    public string Next { get; set; } = string.Empty;
+    public string Previous { get; set; } = string.Empty;
+    public List<Films> Results { get; set; } = new List<Films>();
 }
